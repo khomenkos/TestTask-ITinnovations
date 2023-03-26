@@ -12,12 +12,17 @@ import Lottie
 class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
-    
     @IBOutlet weak var stackSearch: UIStackView!
     @IBOutlet var animationView: LottieAnimationView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Search"
+        setupUI()
+    }
+    
+    // MARK: - Helper Methods
+    private func setupUI() {
         animationView.contentMode = .scaleAspectFill
         animationView.loopMode = .loop
         animationView.play()
@@ -28,7 +33,6 @@ class SearchViewController: UIViewController {
         stackSearch.layer.shadowRadius = 5
     }
     
-    // MARK: - Helper Methods
     private func showNetworkError() {
         let alert = UIAlertController(
             title: "Whoops...",

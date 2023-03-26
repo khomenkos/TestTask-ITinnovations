@@ -266,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evJ-ve-IeF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="825" y="854"/>
+            <point key="canvasLocation" x="176" y="827"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="l87-xR-Pek">
@@ -329,8 +329,58 @@
             </objects>
             <point key="canvasLocation" x="1098" y="120"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="XuS-Ne-5zh">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="VHn-vX-mTM" customClass="WebViewController" customModule="TestTask_IT_INNOVATIONS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fxe-De-fOo">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PmY-Jt-90D">
+                                <rect key="frame" x="0.0" y="119" width="393" height="733"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRr-qW-sJ8">
+                                <rect key="frame" x="16" y="76" width="83.333333333333329" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.down" catalog="system" title="Back"/>
+                                <connections>
+                                    <action selector="backButton:" destination="VHn-vX-mTM" eventType="touchUpInside" id="bBD-YW-tNk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VeG-0c-4Tf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GRr-qW-sJ8" firstAttribute="leading" secondItem="VeG-0c-4Tf" secondAttribute="leading" constant="16" id="0do-mX-xDs"/>
+                            <constraint firstItem="PmY-Jt-90D" firstAttribute="top" secondItem="VeG-0c-4Tf" secondAttribute="top" constant="60" id="30X-m9-ccp"/>
+                            <constraint firstAttribute="bottom" secondItem="PmY-Jt-90D" secondAttribute="bottom" id="bHz-en-bra"/>
+                            <constraint firstItem="VeG-0c-4Tf" firstAttribute="trailing" secondItem="PmY-Jt-90D" secondAttribute="trailing" id="nou-0f-kMv"/>
+                            <constraint firstItem="GRr-qW-sJ8" firstAttribute="top" secondItem="VeG-0c-4Tf" secondAttribute="top" constant="17" id="rMO-0F-Rfo"/>
+                            <constraint firstItem="PmY-Jt-90D" firstAttribute="leading" secondItem="VeG-0c-4Tf" secondAttribute="leading" id="unl-pV-NJW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="PmY-Jt-90D" id="1LK-2o-QGp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fNi-A5-Qu2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1096.9465648854962" y="826.76056338028172"/>
+        </scene>
     </scenes>
+    <designables>
+        <designable name="MGD-eQ-TXj"/>
+        <designable name="cS8-Gm-ygV"/>
+        <designable name="yTQ-8O-zTP"/>
+    </designables>
     <resources>
+        <image name="arrow.down" catalog="system" width="118" height="128"/>
         <image name="book" catalog="system" width="128" height="99"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="star" catalog="system" width="128" height="116"/>

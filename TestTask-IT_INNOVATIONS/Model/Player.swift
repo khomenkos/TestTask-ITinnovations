@@ -18,6 +18,11 @@ struct Player: Decodable, Encodable {
 
 struct InfoPlayer: Decodable, Encodable {
     let id: String
+    let meta: Meta
     let avatar: String?
     let username: String?
+}
+
+struct Meta: Decodable, Encodable {
+    let profileurl: String
 }

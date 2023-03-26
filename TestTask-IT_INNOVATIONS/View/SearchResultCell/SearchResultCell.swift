@@ -14,7 +14,6 @@ protocol FavoriteTableViewCellDelegate: AnyObject {
 class SearchResultCell: UITableViewCell {
     
     static let identifier = "SearchResultCell"
-    
     weak var delegate: FavoriteTableViewCellDelegate?
     
     @IBOutlet weak var viewCell: UIView!
@@ -33,7 +32,6 @@ class SearchResultCell: UITableViewCell {
     }
     
     func configure(player: Favorite) {
-        
         userNameLabel.text = player.player.player.username
         avatarImage.sd_setImage(with: player.player.player.avatar?.asUrl)
 
@@ -43,7 +41,6 @@ class SearchResultCell: UITableViewCell {
             commentLabel.text = player.comment
             stackComment.isHidden = false
         }
-        
     }
     
     @IBAction func edit(_ sender: Any) {

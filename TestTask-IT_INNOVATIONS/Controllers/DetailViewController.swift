@@ -25,12 +25,17 @@ class DetailViewController: UIViewController {
         config()
     }
     
+    // MARK: - Helper Methods
+    
     @IBAction func closeBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func openWebView(_ sender: Any) {
-        
+        guard let url = player.player.meta.profileurl.asUrl else { return }
+        let vc = WebViewController.instantiate()
+        vc.url = url
+        present(vc, animated: true, completion: nil)
     }
     
     @IBAction func addToFavoriteBtn(_ sender: Any) {
@@ -67,10 +72,6 @@ class DetailViewController: UIViewController {
         isFavorite = UserDefaultsManager.shared.isFavoritePlayer(player)
         updateStarButton()
         popupView.layer.cornerRadius = 10
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(closeBtn))
-        gestureRecognizer.cancelsTouchesInView = false
-        gestureRecognizer.delegate = self
-        view.addGestureRecognizer(gestureRecognizer)
         
         // Gradient view
         view.backgroundColor = UIColor.clear
@@ -89,12 +90,6 @@ class DetailViewController: UIViewController {
         transitioningDelegate = self
     }
     
-}
-
-extension DetailViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        return (touch.view === self.view)
-    }
 }
 
 extension DetailViewController: UIViewControllerTransitioningDelegate {

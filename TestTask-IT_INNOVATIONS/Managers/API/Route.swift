@@ -9,8 +9,6 @@ import Foundation
 
 enum Route {
     static let baseUrl = "https://playerdb.co/api/player/steam/"
-    //static let baseUrl = "https://yummie.glitch.me"
-    
     case fetchUser(String)
     
     var discription: String {
@@ -18,8 +16,5 @@ enum Route {
         case .fetchUser(let username):
             return "\(username)"
         }
-        //case .fetchUser(let username): return "/dishes/\(username)"
     }
 }
-
-

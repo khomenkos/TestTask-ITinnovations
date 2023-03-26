@@ -18,23 +18,26 @@ class FavoriteViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
-        
-        animationView.contentMode = .scaleAspectFill
-        animationView.loopMode = .loop
-        notAddedAnimation.loopMode = .loop
-        notAddedAnimation.play()
-        notAddedAnimation.contentMode = .scaleAspectFill
-        animationView.play()
-        
         super.viewDidLoad()
         title = "Favorite"
-        tableView.register(UINib(nibName: SearchResultCell.identifier, bundle: nil), forCellReuseIdentifier: SearchResultCell.identifier)
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         showNoFavorites()
         self.players = UserDefaultsManager.shared.fetchFavoritePlayers()
         tableView.reloadData()
+    }
+    
+    private func setupUI() {
+        tableView.register(UINib(nibName: SearchResultCell.identifier, bundle: nil), forCellReuseIdentifier: SearchResultCell.identifier)
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        animationView.play()
+        
+        notAddedAnimation.contentMode = .scaleAspectFill
+        notAddedAnimation.loopMode = .loop
+        notAddedAnimation.play()
     }
 
     private func showCommentAlert(for favorite: Favorite) {
