@@ -9,5 +9,6 @@ target 'TestTask-IT_INNOVATIONS' do
 
 pod 'SDWebImage', '~> 5.0'
 pod 'ProgressHUD'
+pod 'lottie-ios'
 
 end

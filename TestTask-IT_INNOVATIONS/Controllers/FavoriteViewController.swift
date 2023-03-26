@@ -6,8 +6,11 @@
 //
 
 import UIKit
-
+import Lottie
 class FavoriteViewController: UIViewController {
+
+    @IBOutlet weak var animationView: LottieAnimationView!
+    @IBOutlet weak var notAddedAnimation: LottieAnimationView!
 
     private var players: [Favorite] = [Favorite]()
 
@@ -15,6 +18,14 @@ class FavoriteViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
+        
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        notAddedAnimation.loopMode = .loop
+        notAddedAnimation.play()
+        notAddedAnimation.contentMode = .scaleAspectFill
+        animationView.play()
+        
         super.viewDidLoad()
         title = "Favorite"
         tableView.register(UINib(nibName: SearchResultCell.identifier, bundle: nil), forCellReuseIdentifier: SearchResultCell.identifier)

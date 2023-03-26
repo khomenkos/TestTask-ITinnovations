@@ -6,15 +6,26 @@
 //
 
 import UIKit
+import ProgressHUD
+import Lottie
 
 class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var stackSearch: UIStackView!
+    @IBOutlet var animationView: LottieAnimationView!
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Search"
-        navigationItem.largeTitleDisplayMode = .automatic
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        animationView.play()
+        stackSearch.layer.cornerRadius = 15
+        stackSearch.layer.shadowColor = UIColor.black.cgColor
+        stackSearch.layer.shadowOpacity = 100
+        stackSearch.layer.shadowOffset = CGSize.zero
+        stackSearch.layer.shadowRadius = 5
     }
     
     // MARK: - Helper Methods
@@ -35,14 +46,17 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else { return }
+        ProgressHUD.show()
         APIService.shared.fetchUser(username: query) { (result) in
             switch result {
             case .success(let player):
+                ProgressHUD.dismiss()
                 let vc = DetailViewController.instantiate()
                 vc.modalPresentationStyle = .overFullScreen
                 vc.player = player
                 self.present(vc, animated: true)
             case .failure(_):
+                ProgressHUD.dismiss()
                 self.showNetworkError()
             }
         }

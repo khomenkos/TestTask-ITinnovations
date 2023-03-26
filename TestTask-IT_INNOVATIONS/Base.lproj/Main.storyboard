@@ -17,37 +17,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ctj-zm-Pfu">
-                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MGD-eQ-TXj" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="background"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ctj-zm-Pfu">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="gUS-Wt-f9g" id="ecO-Lj-qZB"/>
                                     <outlet property="delegate" destination="gUS-Wt-f9g" id="FiC-8r-KOh"/>
                                 </connections>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qju-M3-oOz">
-                                <rect key="frame" x="72.333333333333329" y="396" width="248.33333333333337" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qju-M3-oOz">
+                                <rect key="frame" x="39.333333333333343" y="311.33333333333331" width="314.33333333333326" height="229.33333333333331"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8NL-DP-GEV">
-                                        <rect key="frame" x="111.66666666666667" y="-0.33333333333333215" width="25.000000000000014" height="24.666666666666664"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cS8-Gm-ygV" customClass="LottieAnimationView" customModule="Lottie">
+                                        <rect key="frame" x="72.000000000000014" y="0.0" width="170.33333333333337" height="200"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="NKS-IU-4dP"/>
-                                            <constraint firstAttribute="width" constant="25" id="xCS-qG-BfZ"/>
+                                            <constraint firstAttribute="height" constant="200" id="y8B-0q-mi9"/>
                                         </constraints>
-                                    </imageView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="notAdded"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite players will appear here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpM-bL-5dV">
-                                        <rect key="frame" x="0.0" y="35" width="248.33333333333334" height="25"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="1.6666666666666572" y="205.00000000000006" width="311" height="24.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="cpM-bL-5dV" firstAttribute="height" secondItem="qju-M3-oOz" secondAttribute="height" multiplier="0.105903" id="JZr-Zp-RS8"/>
+                                    <constraint firstItem="cS8-Gm-ygV" firstAttribute="width" secondItem="qju-M3-oOz" secondAttribute="width" multiplier="0.540827" id="oKn-ux-wm9"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bFn-te-cTg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="qju-M3-oOz" firstAttribute="width" secondItem="lUE-aO-TKI" secondAttribute="width" multiplier="0.8" id="13b-p6-TWu"/>
                             <constraint firstItem="Ctj-zm-Pfu" firstAttribute="trailing" secondItem="bFn-te-cTg" secondAttribute="trailing" id="6Dd-MG-fA1"/>
                             <constraint firstItem="Ctj-zm-Pfu" firstAttribute="leading" secondItem="bFn-te-cTg" secondAttribute="leading" id="Vx3-UA-gzY"/>
                             <constraint firstItem="qju-M3-oOz" firstAttribute="centerY" secondItem="lUE-aO-TKI" secondAttribute="centerY" id="coD-MB-mu7"/>
@@ -58,6 +76,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Favorite" id="HGc-Sl-dGy"/>
                     <connections>
+                        <outlet property="animationView" destination="MGD-eQ-TXj" id="2hn-GV-Lry"/>
+                        <outlet property="notAddedAnimation" destination="cS8-Gm-ygV" id="PKR-il-oOX"/>
                         <outlet property="stackNoFavorite" destination="qju-M3-oOz" id="0ha-8Y-Xsk"/>
                         <outlet property="tableView" destination="Ctj-zm-Pfu" id="Pav-Wq-b0a"/>
                     </connections>
@@ -70,27 +90,40 @@
         <scene sceneID="hXQ-4v-3O7">
             <objects>
                 <viewController id="W0q-P4-oPf" customClass="SearchViewController" customModule="TestTask_IT_INNOVATIONS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bou-jG-bsR">
+                    <view key="view" contentMode="scaleAspectFill" id="bou-jG-bsR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="eNx-XP-A9V">
-                                <rect key="frame" x="20" y="377.33333333333331" width="353" height="97.333333333333314"/>
+                            <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="yTQ-8O-zTP" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="background"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <stackView opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eNx-XP-A9V">
+                                <rect key="frame" x="20" y="367.66666666666669" width="353" height="117"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Eu-r2-JCe">
-                                        <rect key="frame" x="59.000000000000014" y="0.0" width="235.33333333333337" height="26.333333333333332"/>
-                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="22"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="56.666666666666686" y="0.0" width="240" height="56"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="22"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="YGK-bR-qWK">
-                                        <rect key="frame" x="10" y="41.333333333333371" width="333" height="56"/>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Select username" translatesAutoresizingMaskIntoConstraints="NO" id="YGK-bR-qWK">
+                                        <rect key="frame" x="10" y="61" width="333" height="56"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <scopeButtonTitles>
+                                            <string>Title</string>
+                                            <string>Title</string>
+                                        </scopeButtonTitles>
                                         <connections>
                                             <outlet property="delegate" destination="W0q-P4-oPf" id="SGv-jP-aL4"/>
                                         </connections>
                                     </searchBar>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="YGK-bR-qWK" secondAttribute="trailing" constant="10" id="AiK-1Z-qEP"/>
                                     <constraint firstItem="YGK-bR-qWK" firstAttribute="leading" secondItem="eNx-XP-A9V" secondAttribute="leading" constant="10" id="cEV-d1-vG2"/>
@@ -98,17 +131,26 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lkh-k0-HQU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="yTQ-8O-zTP" firstAttribute="leading" secondItem="lkh-k0-HQU" secondAttribute="leading" id="3cg-mY-77r"/>
+                            <constraint firstItem="yTQ-8O-zTP" firstAttribute="trailing" secondItem="lkh-k0-HQU" secondAttribute="trailing" id="7OA-cQ-HwT"/>
                             <constraint firstItem="eNx-XP-A9V" firstAttribute="leading" secondItem="lkh-k0-HQU" secondAttribute="leading" constant="20" id="9bX-Dx-Nlx"/>
+                            <constraint firstAttribute="bottom" secondItem="yTQ-8O-zTP" secondAttribute="bottom" id="Hlv-Hp-753"/>
+                            <constraint firstItem="yTQ-8O-zTP" firstAttribute="top" secondItem="bou-jG-bsR" secondAttribute="top" id="XlQ-it-kk8"/>
                             <constraint firstItem="eNx-XP-A9V" firstAttribute="centerX" secondItem="bou-jG-bsR" secondAttribute="centerX" id="YsQ-kO-r70"/>
                             <constraint firstItem="eNx-XP-A9V" firstAttribute="centerY" secondItem="bou-jG-bsR" secondAttribute="centerY" id="aXb-je-Wf8"/>
                             <constraint firstItem="lkh-k0-HQU" firstAttribute="trailing" secondItem="eNx-XP-A9V" secondAttribute="trailing" constant="20" id="nmx-qK-oWW"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="background"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="GQp-tt-nm7"/>
                     <connections>
+                        <outlet property="animationView" destination="yTQ-8O-zTP" id="tYN-KB-1tr"/>
                         <outlet property="searchBar" destination="YGK-bR-qWK" id="vxR-o2-IfL"/>
+                        <outlet property="stackSearch" destination="eNx-XP-A9V" id="QID-6H-P8j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evL-aQ-Bw1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -118,7 +160,7 @@
         <!--Detail-->
         <scene sceneID="VyM-wf-e7T">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="HcS-VW-kDq" userLabel="Detail" customClass="DetailViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="HcS-VW-kDq" userLabel="Detail" customClass="DetailViewController" customModule="TestTask_IT_INNOVATIONS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lj9-aX-0FJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,10 +272,13 @@
         <scene sceneID="l87-xR-Pek">
             <objects>
                 <tabBarController id="wpi-nZ-sPg" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pvr-TP-2cY">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Pvr-TP-2cY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="98a-Ug-yOs" kind="relationship" relationship="viewControllers" id="LXG-3p-mqy"/>
@@ -253,6 +298,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="m6M-b3-sdL">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -272,6 +318,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JF7-zK-f4N">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

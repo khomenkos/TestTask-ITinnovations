@@ -17,21 +17,33 @@ class SearchResultCell: UITableViewCell {
     
     weak var delegate: FavoriteTableViewCellDelegate?
     
+    @IBOutlet weak var viewCell: UIView!
     @IBOutlet weak var stackComment: UIStackView!
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     
+    override func awakeFromNib() {
+        avatarImage.layer.cornerRadius = 15
+        viewCell.layer.cornerRadius = 15
+        contentView.layer.shadowColor = UIColor.black.cgColor
+        contentView.layer.shadowOpacity = 100
+        contentView.layer.shadowOffset = CGSize.zero
+        contentView.layer.shadowRadius = 5
+    }
+    
     func configure(player: Favorite) {
         
         userNameLabel.text = player.player.player.username
         avatarImage.sd_setImage(with: player.player.player.avatar?.asUrl)
-        commentLabel.text = player.comment
 
-//        guard let comment = player.comment else { return }
-//        if comment.isEmpty {
-//            stackComment.isHidden = true
-//        }
+        if player.comment == "" {
+            stackComment.isHidden = true
+        } else {
+            commentLabel.text = player.comment
+            stackComment.isHidden = false
+        }
+        
     }
     
     @IBAction func edit(_ sender: Any) {
