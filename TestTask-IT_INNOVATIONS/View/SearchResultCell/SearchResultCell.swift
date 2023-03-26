@@ -7,30 +7,34 @@
 
 import UIKit
 
-class SearchResultCell: UITableViewCell {
+protocol FavoriteTableViewCellDelegate: AnyObject {
+    func editButtonTapped(cell: SearchResultCell)
+}
 
+class SearchResultCell: UITableViewCell {
     
+    static let identifier = "SearchResultCell"
+    
+    weak var delegate: FavoriteTableViewCellDelegate?
+    
+    @IBOutlet weak var stackComment: UIStackView!
+    @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    func configure(player: Favorite) {
+        
+        userNameLabel.text = player.player.player.username
+        avatarImage.sd_setImage(with: player.player.player.avatar?.asUrl)
+        commentLabel.text = player.comment
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+//        guard let comment = player.comment else { return }
+//        if comment.isEmpty {
+//            stackComment.isHidden = true
+//        }
     }
     
-    func configure(for result: Player) {
-        userNameLabel.text = result.player.username
-
-
-        avatarImage.image = UIImage(systemName: "square")
-//      if let smallURL = URL(string: result.imageSmall) {
-//        downloadTask = artworkImageView.loadImage(url: smallURL)
-//      }
+    @IBAction func edit(_ sender: Any) {
+        delegate?.editButtonTapped(cell: self)
     }
 }

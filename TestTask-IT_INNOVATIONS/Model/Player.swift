@@ -7,11 +7,17 @@
 
 import Foundation
 
-struct Player: Decodable {
+struct Favorite: Codable {
+    let player: Player
+    var comment: String?
+}
+
+struct Player: Decodable, Encodable {
     let player: InfoPlayer
 }
 
-struct InfoPlayer: Decodable {
+struct InfoPlayer: Decodable, Encodable {
+    let id: String
     let avatar: String?
     let username: String?
 }

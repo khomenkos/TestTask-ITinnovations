@@ -3,8 +3,8 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,43 +19,74 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MjV-MB-x7M">
-                        <rect key="frame" x="9" y="10.333333333333332" width="60" height="57.333333333333343"/>
+                        <rect key="frame" x="9" y="9" width="60" height="60"/>
                         <color key="tintColor" systemColor="systemGrayColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="LY5-3b-KTK"/>
                             <constraint firstAttribute="height" constant="60" id="v29-xh-foE"/>
                         </constraints>
-                        <imageReference key="image" image="square" catalog="system"/>
-                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="thin"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBK-y8-0Vl">
-                        <rect key="frame" x="79" y="10" width="286" height="22"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kHS-7B-MZ4">
+                        <rect key="frame" x="79" y="10" width="286" height="59"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBK-y8-0Vl">
+                                <rect key="frame" x="0.0" y="0.0" width="50.333333333333336" height="32.666666666666664"/>
+                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CrS-Vg-Hph">
+                                <rect key="frame" x="0.0" y="40.666666666666664" width="107.66666666666667" height="18.333333333333336"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTj-Bz-vCH">
+                                        <rect key="frame" x="0.0" y="0.0" width="67.666666666666671" height="18.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyf-zt-qkd">
+                                        <rect key="frame" x="75.666666666666657" y="0.0" width="32" height="18.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEk-n9-B0F">
+                        <rect key="frame" x="319" y="39.666666666666657" width="51" height="34.333333333333343"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="square.and.pencil" catalog="system"/>
+                        <connections>
+                            <action selector="edit:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Qdb-L7-jCL"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="tBK-y8-0Vl" secondAttribute="bottom" constant="10" id="0HG-5C-rZy"/>
-                    <constraint firstItem="tBK-y8-0Vl" firstAttribute="leading" secondItem="MjV-MB-x7M" secondAttribute="trailing" constant="10" id="1M3-OA-rFu"/>
+                    <constraint firstAttribute="trailing" secondItem="kHS-7B-MZ4" secondAttribute="trailing" constant="10" id="0Mm-r2-ToR"/>
+                    <constraint firstAttribute="bottom" secondItem="MEk-n9-B0F" secondAttribute="bottom" constant="5" id="6By-go-NQY"/>
                     <constraint firstAttribute="bottom" secondItem="MjV-MB-x7M" secondAttribute="bottom" constant="9" id="8gw-GI-Pxa"/>
-                    <constraint firstAttribute="trailing" secondItem="tBK-y8-0Vl" secondAttribute="trailing" constant="10" id="F3s-IF-hvu"/>
                     <constraint firstItem="MjV-MB-x7M" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="M2M-fE-fst"/>
-                    <constraint firstItem="tBK-y8-0Vl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="T1N-yX-vcd"/>
-                    <constraint firstItem="tBK-y8-0Vl" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="pzV-gi-8pc"/>
+                    <constraint firstAttribute="trailing" secondItem="MEk-n9-B0F" secondAttribute="trailing" constant="5" id="PFo-d0-eoB"/>
+                    <constraint firstItem="kHS-7B-MZ4" firstAttribute="leading" secondItem="MjV-MB-x7M" secondAttribute="trailing" constant="10" id="keW-Cb-OHR"/>
+                    <constraint firstAttribute="bottom" secondItem="kHS-7B-MZ4" secondAttribute="bottom" constant="10" id="rAy-Jz-sPx"/>
                     <constraint firstItem="MjV-MB-x7M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="rJI-GH-ddD"/>
+                    <constraint firstItem="kHS-7B-MZ4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="xLL-lp-Su6"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="avatarImage" destination="MjV-MB-x7M" id="gVG-vv-5Zx"/>
-                <outlet property="userNameLabel" destination="tBK-y8-0Vl" id="t4W-lF-LcN"/>
+                <outlet property="avatarImage" destination="MjV-MB-x7M" id="4Ka-o2-xT6"/>
+                <outlet property="commentLabel" destination="oyf-zt-qkd" id="ifn-At-xc4"/>
+                <outlet property="stackComment" destination="CrS-Vg-Hph" id="dEy-LP-NM5"/>
+                <outlet property="userNameLabel" destination="tBK-y8-0Vl" id="QqB-8A-8vf"/>
             </connections>
             <point key="canvasLocation" x="113.74045801526717" y="32.394366197183103"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="square" catalog="system" width="128" height="114"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="113"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
