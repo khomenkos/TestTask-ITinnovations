@@ -56,7 +56,7 @@ class DetailViewController: UIViewController {
     private func showCommentAlert() {
         let alert = UIAlertController(title: "Add Comment", message: "Add a comment for \(player.player.username ?? "user")", preferredStyle: .alert)
         alert.addTextField { textField in
-            textField.placeholder = "Comment"
+            textField.placeholder = "Comment(Optional)"
         }
         alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { _ in
             if let comment = alert.textFields?.first?.text {

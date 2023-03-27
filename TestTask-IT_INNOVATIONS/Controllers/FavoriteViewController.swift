@@ -89,7 +89,6 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension FavoriteViewController: FavoriteTableViewCellDelegate {
-
     func editButtonTapped(cell: SearchResultCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         let favorite = players[indexPath.row]
